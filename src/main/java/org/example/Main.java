@@ -16,7 +16,7 @@ public class Main {
         });
 
         app.command("/echo", (req, ctx) -> {
-            return ctx.ack(req.getRequestBodyAsString());
+            return ctx.ack(req.getRequestBodyAsString() + ctx.getBotId());
         });
 
         // listen and start
