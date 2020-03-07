@@ -15,6 +15,10 @@ public class Main {
             return ctx.ack(":wave: Hello!");
         });
 
+        app.command("/echo", (req, ctx) -> {
+            return ctx.ack(req.getRequestBodyAsString());
+        });
+
         // listen and start
         SlackAppServer server = new SlackAppServer(app);
         server.start(); // http://localhost:3000/slack/events
