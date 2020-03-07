@@ -1,7 +1,6 @@
 package org.example;
 
 import com.slack.api.bolt.App;
-
 import com.slack.api.bolt.jetty.SlackAppServer;
 
 public class Main {
