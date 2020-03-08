@@ -20,10 +20,6 @@ public class Main {
             return ctx.ack(req.getRequestBodyAsString() + ctx.getBotId());
         });
 
-        app.command("/action", (req, ctx) -> {
-            return ctx.ack(req.getRequestBodyAsString() + ctx.getBotId());
-        });
-
         // listen and start
         SlackAppServer server = new SlackAppServer(app);
         server.start(); // http://localhost:3000/slack/events
