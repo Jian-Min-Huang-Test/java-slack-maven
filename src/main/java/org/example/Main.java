@@ -6,9 +6,10 @@ import com.slack.api.bolt.jetty.SlackAppServer;
 public class Main {
 
     public static void main(String[] args) {
-        // setup slack app
-        // App expects env variables (SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET)
-        App app = new App();
+        String SLACK_BOT_TOKEN = "";
+        String SLACK_SIGNING_SECRET = "";
+
+        App app = new App(SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET);
 
         // define handler
         app.command("/hello", (req, ctx) -> {
