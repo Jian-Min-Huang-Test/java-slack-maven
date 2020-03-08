@@ -11,7 +11,6 @@ public class Main {
 
         App app = new App(SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET);
 
-        // define handler
         app.command("/hello", (req, ctx) -> {
             return ctx.ack(":wave: Hello!");
         });
@@ -20,7 +19,6 @@ public class Main {
             return ctx.ack(req.getRequestBodyAsString() + ctx.getBotId());
         });
 
-        // listen and start
         SlackAppServer server = new SlackAppServer(app);
         server.start(); // http://localhost:3000/slack/events
     }
